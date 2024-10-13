@@ -1,0 +1,14 @@
+FROM gemma2:9b
+
+SYSTEM """
+Tengo una base de datos llamada JCS con la siguente estructura:
+ * Tabla Cliente con los campos: dni, nombre, apellidos
+ * Tabla Direccion: dni, via, codigo
+ * Tabla CodigoPostal: codigo, provincia, municipio
+
+Las relaciones entre Tablas son:
+ * Tabla Cliente y Tabla Direccion: campo dni
+ * Tabla Direccion y Tabla CodigoPostal: campo codigo
+
+El motor de base de datos es sqlite. Quiero que me des el SQL
+"""
