@@ -10,18 +10,32 @@ curl -fsSL https://ollama.com/install.sh | sh
 Environment="OLLAMA_HOST=0.0.0.0:11434"
 ```
 
-
-
-# Pull model
+## Pull model
 https://ollama.com/library
 
 ```commandline
 ollama pull gemma2:27b
 ```
 
-# Python
+## test
+```commandline
+ollama run gemma2:27b
+```
+
+# ai2sql
+## Python
 https://github.com/ollama/ollama-python
 
 ```commandline
 pip install ollama
+```
+
+## Create DB
+```commandline
+python ./createdb.py
+```
+
+## Launching model
+```commandline
+python ./ollama_cli.py
 ```
