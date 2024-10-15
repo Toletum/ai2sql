@@ -13,7 +13,7 @@ client = Client(host='http://localhost:11434')
 
 ini = time.time()
 
-response = client.chat(model='gemma2:27b', format='json',
+response = client.chat(model='mistral:7b', format='json',
                        messages=[
     {
         'role': 'system',
@@ -45,10 +45,12 @@ except Exception as ex:
 query = None
 if "sql" in data:
     query = data['sql']
+if "SQL" in data:
+    query = " ".join(data['SQL'])
 if "query" in data:
     query = data['query']
 if query:
-    #print(query)
+    rint(query)
     db = sqlite3.connect("db.db")
     cursor = db.cursor()
     cursor.execute(query)
