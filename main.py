@@ -22,6 +22,7 @@ config.read("config.ini")
 
 host = config["OLLAMA"]["HOST"]
 model = config["OLLAMA"]["MODEL"]
+system_content = config["SYSTEM"]["CONTENT"]
 
 
 client = Client(host=host)
@@ -34,18 +35,7 @@ response = client.chat(model=model,
                        messages=[
     {
         'role': 'system',
-        'content': """I have a database called db.db with the following structure:
-
-Client table with fields: dni, name, surname
-Address table with fields: dni, street, code
-PostalCode table with fields: code, province, city
-
-The relationships between tables are:
-Client and Address: dni
-Address and PostalCode: code
-
-The database engine is SQLite. I want the SQL script.
-"""
+        'content':system_content
     },
     {
         'role': 'user',
