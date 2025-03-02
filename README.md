@@ -14,12 +14,12 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 https://ollama.com/library
 
 ```commandline
-ollama pull gemma2:27b
+ollama pull YOURMODEL
 ```
 
 ## test
 ```commandline
-ollama run gemma2:27b
+ollama run YOURMODEL
 ```
 
 # ai2sql

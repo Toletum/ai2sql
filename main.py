@@ -65,4 +65,4 @@ except Exception as ex:
     print("SQL in Sqlite")
     exit(1)
 
-print(f" total:  {(end - ini)}")
+print(f"{model} -> {(end - ini)} seconds")
