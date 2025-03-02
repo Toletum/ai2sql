@@ -23,13 +23,11 @@ ollama run gemma2:27b
 ```
 
 # ai2sql
-## Python
-https://github.com/ollama/ollama-python
 
 ```commandline
 python3 -m venv .venv
 
-pip install ollama
+pip install -r requirements.txt
 ```
 
 ## Create DB
@@ -39,5 +37,5 @@ python ./createdb.py
 
 ## Launching model
 ```commandline
-python ./ollama_cli.py
+python ./main.py
 ```
