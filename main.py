@@ -34,7 +34,7 @@ response = client.chat(model=model,
                        messages=[
     {
         'role': 'system',
-        'content': """I have a database called JCS with the following structure:
+        'content': """I have a database called db.db with the following structure:
 
 Client table with fields: dni, name, surname
 Address table with fields: dni, street, code
@@ -49,7 +49,7 @@ The database engine is SQLite. I want the SQL script.
     },
     {
         'role': 'user',
-        'content': "query with all clients from municipality 'CiudadA'",
+        'content': "query with all clients from city is 'CiudadA'",
     },
 ])
 
@@ -58,7 +58,7 @@ end = time.time()
 query = Query.model_validate_json(response.message.content)
 print(json.dumps(query.model_dump(), indent=2))
 
-db = sqlite3.connect("db.db")
+db = sqlite3.connect(query.database)
 cursor = db.cursor()
 cursor.execute(query.sql)
 for fila in cursor.fetchall():
