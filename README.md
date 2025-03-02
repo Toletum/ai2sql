@@ -27,6 +27,8 @@ ollama run gemma2:27b
 https://github.com/ollama/ollama-python
 
 ```commandline
+python3 -m venv .venv
+
 pip install ollama
 ```
 
